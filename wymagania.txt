@@ -1,0 +1,147 @@
+SPECYFIKACJA 
+www.spo³eczni.pl
+Portal internetowy o tematyce informatycznej, komputerach i nowoczesnych technologiach
+z elementami sieci spo³ecznoœciowej.
+
+
+SPIS TREŒCI:
+
+Spis Treœci .................................................................................. 2 
+Wstêp ........................................................................................ 2 
+Cel powstania strony ......................................................................... 2 
+Dostêpnoœæ, projektowanie uniwersalne i standardy internetowe ................................ 3 
+Wspomagane przegl¹darki i systemy ............................................................ 3 
+Wymagania sprzêtowe i ustawienia ............................................................. 5 
+Opis i konfiguracja podstron ................................................................. 6 
+Layout strony ................................................................................ 7 
+Wygl¹d ogólny ................................................................................ 8 
+Dodatkowa funkcjonalnoœæ ..................................................................... 9 
+Domeny / nazwa ............................................................................... 9 
+
+WSTÊP:
+
+Dokument ten przedstawia specyfikacjê internetowej strony WWW o charakterze portalu informatycznego, 
+która ma powstaæ jako praca grupowa na projekt zespo³owy. Opisana jest 
+tutaj struktura, zawartoœæ i funkcjonalnoœæ tej strony. Dokument ten bêdzie s³u¿y³ jako plan 
+póŸniejszej budowy portalu.  
+
+
+CEL POWSTANIA STRONY:
+
+
+DOSTÊPNOŒÆ, PROJEKTOWANIE UNIWERSALNE I STANDARDY INTERNETOWE:
+ 
+Strona zostanie zaprojektowana i zbudowana w taki sposób, aby by³a zgodna ze standardami 
+panuj¹cymi w Internecie. Jêzykiem który zostanie wykorzystany do stworzenia strony bêdzie 
+python/Django(https://www.python.org/ , https://www.djangoproject.com/), XHTML w standardzie STRICT (http://www.w3.org/TR/xhtml1/). 
+Strona bêdzie spe³niaæ wymogi dostêpnoœci WAI (http://www.w3.org/WAI/) – na poziomie AA. 
+Wygl¹d strony oparty bêdzie na stylach CSS (http://www.w3.org/Style/CSS/) poziom 1 i 2. 
+
+
+
+WSPOMAGANE PRZEGL¥DARKI I SYSTEMY:
+
+Technologie u¿yte do budowy strony teoretycznie powinny zapewniaæ poprawne wyœwietlanie 
+strony na wszelkich urz¹dzeniach, systemach i oprogramowaniu. Niestety czasami zdarza siê, ¿e 
+niektóre przegl¹darki wyœwietlaj¹ stronê w sposób inny ni¿ standardowo za³o¿ony, lub w 
+przypadku starszych urz¹dzeñ nie maj¹ wbudowanego wspomagania dla wszystkich wspó³czeœnie 
+wykorzystywanych technologii. Mimo, ¿e zostan¹ podjête wszelkie próby aby strona by³a 
+wyœwietlana poprawnie we wszystkich okolicznoœciach, wa¿ne jest aby okreœliæ które 
+oprogramowanie bêdzie w pe³ni wspomagane, a które tylko funkcyjnie. 
+
+Pe³ne wspomaganie: 
+
+a. Windows / PC:
+I. Internet Explorer 7.0 
+II. Internet Explorer 6.0 
+III. Mozilla Firefox 2.0 
+
+b. Max OS / Apple: 
+I. Safari 2.0 
+II. Mozilla Firefox 2.0 4
+
+Wspomagane funkcyjne (u¿ytkownik bêdzie w stanie u¿ywaæ strony bez ¿adnych trudnoœci ale 
+mog¹ pojawiæ siê delikatne ró¿nice w wygl¹dzie strony): 
+
+a. Windows / PC: 
+I. Internet Explorer 5.5 
+II. Mozilla Firefox 1.5 
+III. Netscape 7.2 
+IV. Opera 9.1 
+V. Safari Win 
+
+b. Mac OS / Apple: 
+I. Safari 1.3 
+II. Netscape 7.2 
+III. Opera 9.1 
+IV. Firefox 1.5 
+
+c. Urz¹dzenia przenoœne typu telefony komórkowe, palm topy, blackberry itp. 
+Statystyki na temat u¿ywanych obecnie przegl¹darek dostêpne s¹ tutaj: 
+
+http://www.w3schools.com/browsers/browsers_stats.asp
+
+
+WYMAGANIA SPRZÊTOWE I USTAWIENIA:
+ 
+Aby strona wyœwietlana by³a zgodnie z za³o¿eniami urz¹dzenie musi spe³niæ nastêpuj¹ce wymogi 
+minimalne:
+Komputer lub inne urz¹dzenie z dowolnym systemem operacyjnym i przegl¹dark¹ internetow.
+
+
+
+OPIS I KONFIGURACJA PODSTRON :
+
+FRONTEND:
+	- strona g³owna(ostatnie artykuly, ostatnie pytania forum, ostatnie newsy)
+	- podstrona artykulu(g³ówna treœæ, komentarze[prawdopodobnie Disqus], ewentualne widgety)
+	- lista kategorii
+	- podstrona kategorii(lista artyku³ów danej kategorii)
+	- podstrona autora(lista akrtyku³ów autora, informacje o autorze)
+	- rejestracja(lokalna, [konto [facebook], [google +], [linkedIn]])
+	- logowanie
+	- lista firm prowadzacych blogi
+	- podstrona firmy(list artykulow danej firmy)
+	- ranking autorow, 
+	- ranking artykulow
+	- zlecenia( z zewnetrznych portali )
+
+	
+BACKEND:
+	- kategorie
+	- tagi
+	- moderacja artyku³ów
+	- moderacja uzytkownikow
+	- uprawnienia
+	- 
+
+Jako, ¿e strona jest ci¹gle w budowie i ca³y czas jej koncepcja siê rozwija to na tym etapie nie mo¿na jeszcze dok³adnie okreœliæ iloœci stron 
+oraz wszystkich ich tytu³ów.
+
+
+LAYOUT STRONY :
+
+Layout portalu jest obecnie w fazie projektowania wstêpnego.
+
+
+WYGL¥D OGÓLNY :
+
+Strona ma byæ przejrzysta i czytelna. Grafika nie nasycona, kolory przyjemne dla oka. Tekst na 
+stronie du¿y, ³atwy do przeczytania. WyraŸnie zaznaczone linki. Strona optymalizowana do 
+poprawnego wyœwietlania w ka¿dej dostêpnej rozdzielczoœci - responsywna, umieszczona centralnie. Strona w du¿ym 
+stopniu dostêpna po wy³¹czeniu styli css oraz/lub wyœwietlania grafiki. Wygl¹d klasyczny 
+adekwatny do tematyki strony.
+
+
+DODATKOWA FUNKCJONALNOŒÆ :
+
+a. Subskrypcja do newsletter’a 
+b. RSS Feeds 
+c. Wyszukiwanie na stronie przy u¿yciu silnika Google 
+
+Dodatkowa funkcjonalnoœæ strony mo¿e zostaæ zaimplementowana jeœli oka¿e siê przydatna i 
+pozwoli na to czas a tak¿e mo¿liwoœci serwera na którym umieszczona zostanie strona. 
+
+
+DOMENY / NAZWA :
+spo³eczni.pl - nazwa kodowa
