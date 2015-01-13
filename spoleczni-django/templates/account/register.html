@@ -1,0 +1,9 @@
+{% include 'base/header.html' %}
+<div id="register_form">
+    <form action="/account/register/" method="POST" name="register_form">
+        {% csrf_token %}
+        {{ register_form.as_p }}
+        <input type="submit" name="register" value="Zarejestruj">
+    </form>
+
+</div>

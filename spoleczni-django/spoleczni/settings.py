@@ -67,7 +67,7 @@ DATABASES = {
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'pl'
 
 TIME_ZONE = 'CET'
 
@@ -81,6 +81,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
+#STATIC_ROOT = '/var/www/domains/spoleczni.coderuns.net/spoleczni/static/'
 STATIC_URL = '/static/'
 
 #Templates
@@ -88,3 +89,11 @@ TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]
 
 #Static files
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+
+
+#DEFAULT_CHARSET  = 'utf-8'
+
+
+
+
+
