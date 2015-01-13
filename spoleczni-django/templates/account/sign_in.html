@@ -1,0 +1,15 @@
+{% include 'base/header.html' %}
+<div id="login_form">
+    {{ error }}
+    <form action="/account/sign_in/" method="POST" name="login_form">
+        {% csrf_token %}
+        <label for="username">Login: </label>
+        <input id="username" type="text" name="username" value=""><br>
+        <br>
+        <label for="password">Hasło: </label>
+        <input id="password" type="password" name="password" value=""><br>
+        <br>
+        <input type="submit" name="log_in" value="Zaloguj">
+    </form>
+
+</div>
