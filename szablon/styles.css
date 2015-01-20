@@ -1,0 +1,206 @@
+/*------------------------------------
+	Simple reset and page styles
+-------------------------------------*/
+
+* {
+	margin:0;
+	padding:0;
+}
+
+html{
+	background-color: #f3f3f3;
+}
+
+body{
+	font: normal 14px sans-serif;
+}
+
+
+/*------------------------------------
+	Pertinent code for the sidebar
+-------------------------------------*/
+
+
+#page {
+	
+	/*
+	 	First, we set the top-level element to display:flex. By
+		default, it will orient its children horizontally. We are
+		providing -webkit- versions for Safari and iOS.
+	 */
+
+	display: -webkit-flex;
+	display: flex;
+
+	/* Then, we give it a max-width and center it */
+
+	max-width:1200px;
+	margin:0 auto;
+}
+
+#main {
+	
+	/* 
+		We then set the child with the main content of 
+		the page to grow automatically and take all the space
+	*/
+	
+	-webkit-flex-grow:1;
+	flex-grow:1;
+}
+
+aside{
+	
+	/* 
+		The sidebar wont grow automatically (flex-grow defaults to 0),
+		and has a width. We should only disable shrinking by setting
+		flex-shrink to 0.
+	*/
+
+	-webkit-flex-shrink:0;
+	flex-shrink:0;
+	width:280px;
+}
+
+
+/*------------------------------------
+	Styling the content and sidebar
+-------------------------------------*/
+
+
+#main {
+	background-color:#fff;
+	padding:40px 100px 40px 40px;
+	line-height: 1.5;
+	color:#565a5c;
+}
+
+#main h1{
+	margin-bottom: 28px;
+	font-size: 24px;
+}
+
+#main p{
+	margin-bottom: 24px;
+}
+
+#main .wireframe-box{
+	background-color:#e2e2e2;
+	text-align: center;
+	margin-bottom: 24px;
+}
+
+aside{
+	background-color:#292c2f;
+	color:#fff;
+	padding:20px;
+}
+
+aside .wireframe-box{
+	background-color: #37393C;
+	margin-top:20px;
+	padding:50px;
+}
+
+aside .wireframe-box.double{
+	padding:100px;
+}
+
+@media all and (max-width: 800px) {
+
+	/* On small screens, make elements show one beneath the other */
+
+	#page {
+		-webkit-flex-flow:column;
+		flex-flow:column;
+	}
+
+	/* Also make the sidebar take the entire width of the screen */
+
+	aside{
+		width:auto;
+	}
+
+	#main{
+		padding-right:40px;
+	}
+}
+
+
+/*------------------------------------
+	Demo footer. Ignore and remove
+-------------------------------------*/
+
+
+footer {
+
+	width: 770px;
+	font: normal 16px Arial, Helvetica, sans-serif;
+	padding: 15px 35px;
+	position: fixed;
+	bottom: 0;
+	left: 50%;
+	margin-left: -420px;
+
+	background-color:#1f1f1f;
+	background-image:linear-gradient(to bottom, #1f1f1f, #101010);
+
+	border-radius:2px 2px 0 0;
+	box-shadow: 0 -1px 4px rgba(0,0,0,0.4);
+	z-index:1;
+}
+
+footer a.tz{
+	font-weight:normal;
+	font-size:16px !important;
+	text-decoration:none !important;
+	display:block;
+	margin-right: 300px;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+	color:#bfbfbf !important;
+	z-index:1;
+}
+
+footer a.tz:before{
+	content: '';
+	width: 138px;
+	height: 20px;
+	display: inline-block;
+	position: relative;
+	bottom: -3px;
+}
+
+footer .close{
+	position: absolute;
+	cursor: pointer;
+	width: 8px;
+	height: 8px;
+	background: url('http://cdn.tutorialzine.com/misc/enhance/v2_footer_bg.png') no-repeat 0 0px;
+	top:10px;
+	right:10px;
+	z-index: 3;
+}
+
+footer #tzine-actions{
+	position: absolute;
+	top: 8px;
+	width: 500px;
+	right: 50%;
+	margin-right: -650px;
+	text-align: right;
+	z-index: 2;
+}
+
+footer #tzine-actions iframe{
+	display: inline-block;
+	height: 21px;
+	width: 95px;
+	position: relative;
+	float: left;
+	margin-top: 11px;
+}
+
+@media (max-width: 1024px) {
+	#bsaHolder, footer{ display:none;}
+}

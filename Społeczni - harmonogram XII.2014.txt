@@ -1,15 +1,22 @@
-Projekt zespo³owy: Spo³eczni.pl
+Projekt zespo³owy: Spo³eczni.pl - IT my life
 Harmonogram zadañ do wykonania
 
 Grudzieñ 2014r:
 
 Szymon Nowak - Budowa panelu administracyjnego dla spo³eczni.pl
-Micha³ Nied¿wiadek - Budowa panelu administracyjnego dla spo³eczni.pl
+Micha³ NiedŸwiadek - Budowa panelu administracyjnego dla spo³eczni.pl
 Kristsina Lubchuk - Zaprojektowanie i stworzenie designu dla strony spo³eczni.pl
 Wojciech NiedŸwiadek - Zaprojektowanie i stworzenie designu dla strony spo³eczni.pl
 
-Ca³a ekipa: Wyjœcie na piwo :) Deadline: Dziœ
-
 Deadline: Styczeñ 2015 roku.
 
+
+
 Styczeñ 2015r:
+
+Szymon Nowak - Stworzenie modu³u artyku³ów/wpisów na stronie
+Micha³ NiedŸwiadek - Stworzenie modu³u artyku³ów/wpisów na stronie
+Kristsina Lubchuk - Design i ostylowanie modu³u artyku³ów
+Wojciech NiedŸwiadek - Design i ostylowanie modu³u artyku³ów
+
+Deadline: Luty 2015 roku.
