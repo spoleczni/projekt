@@ -1,22 +1,28 @@
-Projekt zespo≥owy: Spo≥eczni.pl - IT my life
-Harmonogram zadaÒ do wykonania
+Projekt zespo≈Çowy: Spo≈Çeczni.pl - IT my life
+Harmonogram zada≈Ñ do wykonania
 
-GrudzieÒ 2014r:
+Grudzie≈Ñ 2014r:
 
-Szymon Nowak - Budowa panelu administracyjnego dla spo≥eczni.pl
-Micha≥ Niedüwiadek - Budowa panelu administracyjnego dla spo≥eczni.pl
-Kristsina Lubchuk - Zaprojektowanie i stworzenie designu dla strony spo≥eczni.pl
-Wojciech Niedüwiadek - Zaprojektowanie i stworzenie designu dla strony spo≥eczni.pl
+Szymon Nowak - Budowa panelu administracyjnego dla spo≈Çeczni.pl
+Micha≈Ç Nied≈∫wiadek - Budowa panelu administracyjnego dla spo≈Çeczni.pl
+Kristsina Lubchuk - Zaprojektowanie i stworzenie designu dla strony spo≈Çeczni.pl
+Wojciech Nied≈∫wiadek - Zaprojektowanie i stworzenie designu dla strony spo≈Çeczni.pl
 
-Deadline: StyczeÒ 2015 roku.
+Deadline: Stycze≈Ñ 2015 roku.
 
 
 
-StyczeÒ 2015r:
+Stycze≈Ñ 2015r:
 
-Szymon Nowak - Stworzenie modu≥u artyku≥Ûw/wpisÛw na stronie
-Micha≥ Niedüwiadek - Stworzenie modu≥u artyku≥Ûw/wpisÛw na stronie
-Kristsina Lubchuk - Design i ostylowanie modu≥u artyku≥Ûw
-Wojciech Niedüwiadek - Design i ostylowanie modu≥u artyku≥Ûw
+Szymon Nowak - Stworzenie modu≈Çu artyku≈Ç√≥w/wpis√≥w na stronie
+Micha≈Ç Nied≈∫wiadek - Stworzenie modu≈Çu artyku≈Ç√≥w/wpis√≥w na stronie
+Kristsina Lubchuk - Design i ostylowanie modu≈Çu artyku≈Ç√≥w
+Wojciech Nied≈∫wiadek - Design i ostylowanie modu≈Çu artyku≈Ç√≥w
 
 Deadline: Luty 2015 roku.
+
+Luty 2015r:
+Ca≈Ça grupa: Tworzenie panelu zwyk≈Çego u≈ºytkownika (mo≈ºliwo≈õƒá wysy≈Çania pr√≥bnych artyku≈Ç√≥w do 
+            moderacji/zatwierdzenia przez admina, statystyki);
+            
+            
