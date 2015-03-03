@@ -1,0 +1,10 @@
+Projekt zespo³owy: Spo³eczni.pl - IT my life
+Harmonogram zadañ do wykonania
+
+Marzec 2015r:
+
+Ca³a grupa: Dalszy rozwój prac nad panelem urzytkownika;
+	    Stworzenie i dodanie modu³u komentarzy (w sekcji artyku³u);
+	    Utworzenie i dodanie odpowiedniej grafiki do powyzszych modu³ów.
+
+Deadline: Kwiecieñ 2015 roku.
