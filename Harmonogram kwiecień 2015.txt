@@ -5,7 +5,9 @@ Kwiecieñ 2015 roku:
 
 Panowie: 
 	 Poprawki dotychczas wykonanych modu³ów;
-	 Stworzenie i dodanie modu³u blogowego (w miarê mo¿liwoœci jak najbardziej uniwersalny);
+	 Stworzenie i dodanie modu³ów: kategorii artyku³ów, tagów, uprawnieñ userów,
+	 Dodanie sekcji wideo;
+	 Prace nad profilem autora tekstów;
 	 Utworzenie i dodanie odpowiedniej grafiki do powyzszych modu³ów.
 	 Jeœli bedzie mozliwoœæ przenosiny na lepszy server.
 
