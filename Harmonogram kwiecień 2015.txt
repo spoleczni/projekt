@@ -1,0 +1,16 @@
+Projekt zespo³owy: Spo³eczni.pl - IT my life
+Harmonogram zadañ do wykonania
+
+Kwiecieñ 2015 roku:
+
+Panowie: 
+	 Poprawki dotychczas wykonanych modu³ów;
+	 Stworzenie i dodanie modu³u blogowego (w miarê mo¿liwoœci jak najbardziej uniwersalny);
+	 Utworzenie i dodanie odpowiedniej grafiki do powyzszych modu³ów.
+	 Jeœli bedzie mozliwoœæ przenosiny na lepszy server.
+
+Pani Krystyna: 
+	 Wykonanie widoku bloga dla strony firmowej.
+	 Pomoc przy innych pracach w danym miesi¹cu.
+
+Deadline: Maj 2015 roku.
