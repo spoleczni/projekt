@@ -24,19 +24,37 @@ DEBUG = True
 
 TEMPLATE_DEBUG = True
 
+TEMPLATE_CONTEXT_PROCESSORS = \
+    (
+        "django.contrib.auth.context_processors.auth",
+        "django.core.context_processors.debug",
+        "django.core.context_processors.i18n",
+        "django.core.context_processors.media",
+        "django.core.context_processors.static",
+        "django.core.context_processors.tz",
+        "django.contrib.messages.context_processors.messages",
+        "django.core.context_processors.request",
+    )
+
 ALLOWED_HOSTS = []
+
 
 
 # Application definition
 
 INSTALLED_APPS = (
+    'grappelli',
     'django.contrib.admin',
     'django.contrib.auth',
+    'django.contrib.sites',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'ckeditor',
     'articles',
+    'account',
+    'disqus',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -81,7 +99,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
-#STATIC_ROOT = '/var/www/domains/spoleczni.coderuns.net/spoleczni/static/'
+# STATIC_ROOT = '/var/www/domains/spoleczni.coderuns.net/spoleczni/static/'
 STATIC_URL = '/static/'
 
 #Templates
@@ -93,7 +111,18 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
 #DEFAULT_CHARSET  = 'utf-8'
 
+#Grappelli
+TE_CONTEXT_PROCESSORS = (
+    'django.core.context_processors.request',
+)
+GRAPPELLI_ADMIN_TITLE = "IT's my life"
 
+#CKEditor
+CKEDITOR_UPLOAD_PATH = "uploads/"
+CKEDITOR_JQUERY_URL = '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'
 
+#Disqus
+DISQUS_API_KEY = 'b3WBwKT9FqgFdDPvF9SghI4CstUEmkfJEJxVcaDPrgtBcEM1qtdFOcdJ2FKinjUq'
+DISQUS_WEBSITE_SHORTNAME = 'its-mylife'
 
-
+#Comments

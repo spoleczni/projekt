@@ -1,0 +1,8 @@
+        {% load static %}
+        <script src="{% static 'home/js/classie.js' %}"></script>
+		<script src="{% static 'home/js/gnmenu.js' %}"></script>
+		<script>
+			new gnMenu( document.getElementById( 'gn-menu' ) );
+		</script>
+	</body>
+</html>

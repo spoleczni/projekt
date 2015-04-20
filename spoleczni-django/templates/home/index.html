@@ -1,64 +1,119 @@
-﻿            {% include 'base/header.html' %}
-            {% load static %}
-            <center>
-            <div class="metro_gallery flip horizontal lightbox">
-                <div class="tile tile_1x1 blue">
-                    <img src="{% static 'home/demo_images/rooney.jpg' %}" data-caption="Rooney" />
-                    <img src="{% static 'home/demo_images/tshirt.jpg' %}" data-caption="ManUtd" />
+{% include "base/header.html" %}
+
+<div id="main_content" class="container">
+    <div class="row">
+
+        <div class="col-md-9">
+            {% comment %}
+
+            {% endcomment %}
+            {% block content %}
+                <div class="page-header">
+                    <h1>Najnowsze artykuły
+                        <small class="hidden">Ewentualne lorem ipsum</small>
+                    </h1>
                 </div>
-                <div class="tile tile_1x1 darkred">
-                    <img src="{% static 'home/demo_images/king.jpg' %}" data-caption="ManUtd" />
+                {% if recent_articles %}
+
+                {% for article in recent_articles %}
+
+                    <div class="media">
+                        <a class="pull-left" href="#">
+                            <img class="media-object" src="http://placehold.it/64x64"
+                                 alt="Media Object">
+                        </a>
+
+                        <div class="media-body">
+                            <h4 class="media-heading">
+                                <a href="{% url 'articles:detail' article.id %}">
+                                    {{ article.title }}
+                                </a>
+                            </h4>
+                            {% autoescape off %}
+                                {{ article.body }}
+                            {%  endautoescape %}
+
+                        </div>
+                    </div>
+
+                {% endfor %}
+
+                {% else %}
+                    <h4>Nie ma jeszcze żadnych artykułów :(</h4>
+                {% endif %}
+            {% endblock %}
+
+        </div>
+        <div id="sidebar">
+            <div class="col-md-3">
+                {% block sidebar %}{% endblock %}
+                <div class="panel panel-default">
+                    <div class="panel-heading">{% if user.is_authenticated %} Witaj, {{ user.username }} {% else %}
+                        Zaloguj się {% endif %}</div>
+                    <div class="panel-body container-fluid">
+
+                        {% if user.is_authenticated %}
+                            <ul>
+                                <li><a href="{% url 'edit' %}">Mój profil</a></li>
+                                <li><a href="#">Móje posty</a><span class="badge pull-right">14</span></li>
+                                <li><a href="#">Móje komentarze</a><span class="badge pull-right">69</span></li>
+                                <br>
+                                <li><a href="/account/sign_out"><strong>Wyloguj się</strong></a></li>
+                            </ul>
+
+                        {% else %}
+
+                            {% if error %}
+                                <div class="alert alert-danger" role="alert">{{ error }}</div>
+                            {% endif %}
+
+                            <form action="/account/sign_in/#login_form" method="POST" name="login_form">
+                                {% csrf_token %}
+
+                                <div class="form-group">
+                                    <label for="username">Login</label>
+                                    <input type="text" class="form-control" id="username"
+                                           placeholder="Login"
+                                           name="username">
+                                </div>
+                                <div class="form-group">
+                                    <label for="password">Hasło</label>
+                                    <input type="password" class="form-control" id="password"
+                                           placeholder="Password"
+                                           name="password">
+                                </div>
+
+                                <button type="submit" class="btn btn-default" name="log_in">Zaloguj się</button>
+                            </form>
+
+                        {% endif %}
+
+
+                    </div>
                 </div>
-                <div class="tile tile_1x2 orange">
-                    <img src="{% static 'home/demo_images/giggs.jpg' %}" data-caption="Giggs" />
-                    <img src="{% static 'home/demo_images/beckham.jpg' %}" data-caption="Beckham" />
-                </div>
-                <div class="tile tile_2x1 red">
-                    <img src="{% static 'home/demo_images/ferguson.jpg' %}" data-caption="Ferguson" />
-                    <img src="{% static 'home/demo_images/rio.jpg' %}" data-caption="ferdinand" />
-                </div>
-                <div class="tile tile_2x2 purple">
-                    <img src="{% static 'home/demo_images/king.jpg' %}" data-caption="ManUtd" />
-                    <img src="{% static 'home/demo_images/tshirt.jpg' %}" data-caption="ManUtd" />
-                </div>
-                <div class="tile tile_1x1 darkred">
-                    <img src="{% static 'home/demo_images/rooney.jpg' %}" data-caption="Rooney" />
-                </div>
-                <div class="tile tile_1x1 grey">
-                    <img src="{% static 'home/demo_images/tshirt.jpg' %}" data-caption="ManUtd" />
-                    <img src="{% static 'home/demo_images/ronaldo.jpg' %}" data-caption="Ronaldo" />
-                </div>
-                <div class="tile tile_2x1 orange">
-                    <img src="{% static 'home/demo_images/paper.jpg' %}" data-caption="ManUtd" />
-                    <img src="{% static 'home/demo_images/ferguson.jpg' %}" data-caption="Ferguson" />
-                </div>
-                <div class="tile tile_3x3 green">
-                    <img src="{% static 'home/demo_images/king.jpg' %}" data-caption="ManUtd" />
-                    <img src="{% static 'home/demo_images/rooney.jpg' %}" data-caption="Rooney" />
-                    <img src="{% static 'home/demo_images/tshirt.jpg' %}" data-caption="ManUtd" />
-                </div>
-                <div class="tile tile_2x1 purple">
-                    <img src="{% static 'home/demo_images/rio.jpg' %}" data-caption="ferdinand" />
-                    <img src="{% static 'home/demo_images/paper.jpg' %}" data-caption="ManUtd" />
-                </div>
-                <div class="tile tile_2x3 yellow">
-                    <img src="{% static 'home/demo_images/group.jpg' %}" data-caption="Group" />
-                    <img src="{% static 'home/demo_images/manutd_logo.jpg' %}" data-caption="ManUtd" />
-                </div>
-                <div class="tile tile_4x2 darkblue">
-                    <img src="{% static 'home/demo_images/ferguson.jpg' %}" data-caption="Ferguson" />
-                    <img src="{% static 'home/demo_images/paper.jpg' %}" data-caption="ManUtd" />
-                    <img src="{% static 'home/demo_images/rio.jpg' %}" data-caption="ferdinand" />
-                </div>
-                <div class="tile tile_3x1 darkgreen">
-                    <img src="{% static 'home/demo_images/champ.jpg' %}" data-caption="EPL Champion" />
-                    <img src="{% static 'home/demo_images/cloth.jpg' %}" data-caption="ManUtd" />
-                </div>
-                <div class="tile tile_3x1 darkgreen">
-                    <img src="{% static 'home/demo_images/wallpaper.jpg' %}" data-caption="ManUtd" />
-                    <img src="{% static 'home/demo_images/champ.jpg' %}" data-caption="EPL Champion" />
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">Najnowsze komentarze</div>
+                    <div class="panel-body">
+                        <div class="media">
+                            <div class="media-body">
+                                <h4 class="media-heading">admin</h4>
+                                hehe, lorem ipsum dolor
+                            </div>
+                        </div>
+
+                        <div class="media">
+                            <div class="media-body">
+                                <h4 class="media-heading">userTest</h4>
+                                lorem, lorem ipsum
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-         </center>
-        </br></br></br>
-		{% include 'base/footer.html' %}
+        </div>
+    </div>
+</div>
+
+
+{% include "base/footer.html" %}

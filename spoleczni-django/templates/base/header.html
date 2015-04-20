@@ -1,72 +1,64 @@
+{% load staticfiles %}
+
 <!DOCTYPE html>
-<html lang="en" class="no-js">
-	<head>
-        {% load staticfiles %}
+<html lang="pl_PL">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>IT's my life</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
 
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Spoleczni</title>
-		<meta name="description" content="A sidebar menu as seen on the Google Nexus 7 website" />
-		<meta name="keywords" content="google nexus 7 menu, css transitions, sidebar, side menu, slide out menu" />
-		<meta name="author" content="Codrops" />
-		<link rel="shortcut icon" href="../favicon.ico">
-		<link rel="stylesheet" type="text/css" href="{% static 'home/css/normalize.css' %}" />
-		<link rel="stylesheet" type="text/css" href="{% static 'home/css/demo.css' %}" />
-		<link rel="stylesheet" type="text/css" href="{% static 'home/css/component.css' %}" />
-		<script src="{% static 'home/css/js/modernizr.custom.js' %}"></script>
-        <link rel="stylesheet" type="text/css" href="{% static 'home/css/metro_gallery.css' %}" />
-        <link rel="stylesheet" type="text/css" href="{% static 'home/css/demo2.css' %}" />
-        <script type="text/javascript" src="{% static 'home/javascript/jquery.js' %}"></script>
-        <script type="text/javascript" src="{% static 'home/javascript/masonry.pkgd.min.js' %}"></script>
-        <script type="text/javascript" src="{% static 'home/javascript/metro_gallery.min.js' %}"></script>
-        <script type="text/javascript" src="{% static 'home/javascript/hammer.js' %}"></script>
-        <script type="text/javascript">
-            Metro_Gallery.setOptions({
-                base_size: 100,
-                gutter: 10,
-                scale: 1.4,
-                delay: 1000
-            });
-        </script>
+    <!-- wlasne style -->
+    <link rel="stylesheet" type="text/css" href="{% static 'home/css/style.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'datepicker/css/datepicker.css' %}">
+</head>
+<body>
 
-	</head>
-	<body>
-		<div class="container">
-			<ul id="gn-menu" class="gn-menu-main">
-				<li class="gn-trigger">
-					<a class="gn-icon gn-icon-menu"><span>Menu</span></a>
-					<nav class="gn-menu-wrapper">
-						<div class="gn-scroller">
-							<ul class="gn-menu">
-								<li class="gn-search-item">
-									<input placeholder="Search" type="search" class="gn-search">
-									<a class="gn-icon gn-icon-search"><span>Search</span></a>
-								</li>
-								<li>
-									<a class="gn-icon gn-icon-download">Downloads</a>
-									<ul class="gn-submenu">
-										<li><a class="gn-icon gn-icon-illustrator">Vector Illustrations</a></li>
-										<li><a class="gn-icon gn-icon-photoshop">Photoshop files</a></li>
-									</ul>
-								</li>
-								<li><a class="gn-icon gn-icon-cog">Settings</a></li>
-								<li><a class="gn-icon gn-icon-help">Help</a></li>
-								<li>
-									<a class="gn-icon gn-icon-archive">Archives</a>
-									<ul class="gn-submenu">
-										<li><a class="gn-icon gn-icon-article">Articles</a></li>
-										<li><a class="gn-icon gn-icon-pictures">Images</a></li>
-										<li><a class="gn-icon gn-icon-videos">Videos</a></li>
-									</ul>
-								</li>
-							</ul>
-						</div><!-- /gn-scroller -->
-					</nav>
-				</li>
-				<li><a class="codrops-icon codrops-icon-drop" href="http://umcs.pl"><span>Przejdź na stronę UMCS</span></a></li>
-			</ul>
-			<header>
-				<h1>Spoleczni.pl <span>Informatyka w przystępnym wydaniu</span></h1>
-			</header>
-		</div><!-- /container -->
+<div class="container-fluid">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                                data-target="#bs-example-navbar-collapse-1">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="/">IT's my life</a>
+                        <ul class="nav navbar-nav">
+                            <li class="active"><a href="/">Strona Główna</a></li>
+                            <li>
+                                <a href="{% url 'articles:list' %}" >Artykuły</a>
+                            </li>
+                             <li><a href="/account/register/#login_form">Rejestracja</a></li>
+                             <li><a href="/account/sign_in/#login_form">Logowanie</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <form id="search" class="navbar-form navbar-left" role="search">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Szukaj">
+                        </div>
+                        <button type="submit" class="btn btn-default">Szukaj</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </nav>
+
+    {% include "home/slider.html" %}
+

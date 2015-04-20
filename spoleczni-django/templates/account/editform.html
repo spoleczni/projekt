@@ -1,0 +1,93 @@
+{% extends "account/edit.html" %}
+
+{% block content %}
+    <div class="col-lg-10">
+        {% for error in errors %}
+             <div class="alert alert-danger" role="alert">{{ error }}</div>
+        {% endfor %}
+     {% for success in success %}
+             <div class="alert alert-success" role="alert">{{ success }}</div>
+        {% endfor %}
+        <div class="panel panel-default bootstrap-admin-no-table-panel">
+            <div class="panel-heading">
+                <div class="text-muted bootstrap-admin-box-title">Edytuj dane profilowe</div>
+            </div>
+            <div class="bootstrap-admin-no-table-panel-content bootstrap-admin-panel-content collapse in">
+                <form action="{% url 'editform' %}" method="post" class="form-horizontal">
+                    {% csrf_token %}
+                    <fieldset>
+                        <legend>Edycja</legend>
+
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label" for="focusedInput">Login</label>
+
+                            <div class="col-lg-10">
+                                <input name="first_name" class="form-control" id="focusedInput" type="text"
+                                       value="{{ user_data.username }}" disabled>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label" for="focusedInput">Imie</label>
+
+                            <div class="col-lg-10">
+                                <input name="first_name" class="form-control" id="focusedInput" type="text"
+                                       value="{{ user_data.first_name }}">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label" for="focusedInput">Nazwisko</label>
+
+                            <div class="col-lg-10">
+                                <input name="last_name" class="form-control" id="focusedInput" type="text"
+                                       value="{{ user_data.last_name }}">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label" for="focusedInput2">Email</label>
+
+                            <div class="col-lg-10">
+                                <input name="email" class="form-control" id="focusedInput2" type="text"
+                                       value="{{ user_data.email }}">
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Zapisz zmiany</button>
+                    </fieldset>
+                </form>
+                <br>
+                <br>
+
+                <form action="{% url 'editform' %}" method="post" class="form-horizontal">
+                    {% csrf_token %}
+                    <input type="hidden" name="change_password" value="1">
+                    <fieldset>
+                        <legend>Zmień hasło</legend>
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label" for="focusedInput">Aktualne hasło</label>
+
+                            <div class="col-lg-10">
+                                <input name="password" class="form-control" id="focusedInput" type="password">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label" for="focusedInput">Nowe hasło</label>
+
+                            <div class="col-lg-10">
+                                <input name="new_password" class="form-control" id="focusedInput" type="password">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label" for="focusedInput2">Powtóz nowe hasło</label>
+
+                            <div class="col-lg-10">
+                                <input name="repeat_new_password" class="form-control" id="focusedInput2"
+                                       type="password">
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Zmień hasło</button>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

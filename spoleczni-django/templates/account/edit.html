@@ -1,10 +1,249 @@
+{% load staticfiles %}
+{% load extras %}
+
 <!DOCTYPE html>
 <html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title></title>
+<head>
+    <title>About | Bootstrap 3.x Admin Theme</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap Docs -->
+    <link href="http://getbootstrap.com/docs-assets/css/docs.css" rel="stylesheet" type="text/css" media="screen">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" media="screen" type="text/css" href="{% static 'account/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" media="screen" type="text/css" href="{% static 'account/css/bootstrap-theme.min.css' %}">
+
+    <!-- Bootstrap Admin Theme -->
+    <link rel="stylesheet" media="screen" type="text/css" href="{% static 'account/css/bootstrap-admin-theme.css' %}">
+    <link rel="stylesheet" media="screen" type="text/css"
+          href="{% static 'account/css/bootstrap-admin-theme-change-size.css' %}">
+
+    <!-- Custom styles -->
+    <style type="text/css">
+        @font-face {
+            font-family: Ubuntu;
+            src: url("{% static 'account/fonts/Ubuntu-Regular.ttf' %}");
+        }
+
+        .bs-docs-masthead {
+            background-color: #6f5499;
+            background-image: linear-gradient(to bottom, #563d7c 0px, #6f5499 100%);
+            background-repeat: repeat-x;
+        }
+
+        .bs-docs-masthead {
+            padding: 0;
+        }
+
+        .bs-docs-masthead h1 {
+            color: #fff;
+            font-size: 40px;
+            margin: 0;
+            padding: 34px 0;
+            text-align: center;
+        }
+
+        .bs-docs-masthead a:hover {
+            text-decoration: none;
+        }
+
+        .meritoo-logo a {
+            background-color: #fff;
+            border: 1px solid rgba(66, 139, 202, 0.4);
+            display: block;
+            font-family: Ubuntu;
+            padding: 22px 0;
+            text-align: center;
+        }
+
+        .meritoo-logo a,
+        .meritoo-logo a:hover,
+        .meritoo-logo a:focus {
+            text-decoration: none;
+        }
+
+        .meritoo-logo a img {
+            display: block;
+            margin: 0 auto;
+        }
+
+        .meritoo-logo a span {
+            color: #4e4b4b;
+            font-size: 18px;
+        }
+
+        .row-urls {
+            margin-top: 4px;
+        }
+
+        .row-urls .col-md-6 {
+            text-align: center;
+        }
+
+        .row-urls .col-md-6 a {
+            font-size: 14px;
+        }
+    </style>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+           <script type="text/javascript" src="js/html5shiv.js"></script>
+           <script type="text/javascript" src="js/respond.min.js"></script>
+        <![endif]-->
 </head>
-<body>
-edit
+<body class="bootstrap-admin-with-small-navbar">
+<!-- small navbar -->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                            data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">IT's my life</a>
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="/">Strona Główna</a></li>
+                        <li>
+                            <a href="{% url 'articles:list' %}">Artykuły</a>
+                        </li>
+                        <li><a href="{% url 'register' %}#login_form">Rejestracja</a></li>
+                        <li><a href="{% url 'sign_in' %}#login_form">Logowanie</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <form id="search" class="navbar-form navbar-left" role="search">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Szukaj">
+                    </div>
+                    <button type="submit" class="btn btn-default">Szukaj</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <!-- left, vertical navbar & content -->
+    <div class="row">
+        <!-- left, vertical navbar -->
+        <div class="col-md-2 bootstrap-admin-col-left">
+            <ul class="nav navbar-collapse collapse bootstrap-admin-navbar-side">
+                <li class="{% active 'edit' %}">
+                    <a href="{% url 'edit' %}"><i class="glyphicon glyphicon-chevron-right"></i> Podsumowanie</a>
+                </li>
+                <li class="{% active 'editform' %}">
+                    <a href="{% url 'editform' %}"><i class="glyphicon glyphicon-chevron-right"></i> Edytuj profil</a>
+                </li>
+                <li {% active 'account/messages' %}>
+                    <a href="#"><span class="badge pull-right">2,221</span> Wiadomości</a>
+                </li>
+                <li>
+                    <a href="{% url 'sign_out' %}"><i class="glyphicon glyphicon-chevron-right"></i> Wyloguj</a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- content -->
+            <div class="col-md-10">
+            {% block content %}
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="page-header bootstrap-admin-content-title">
+
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <div class="text-muted bootstrap-admin-box-title">Moje artykuły</div>
+                                <a href="{% url 'write_article' %}" class="pull-right">Napisz nowy artykuł</a>
+                            </div>
+                            <div class="bootstrap-admin-panel-content">
+                                <ul>
+                                {% if articles %}
+                                    {% for article in articles %}
+                                        <li>{{ article.title }}</li>
+
+                                    {% endfor %}
+                                {% else %}
+                                    Nie napisałeś jeszcze żadnego artykułu, kliknij
+                                    <a href="{% url 'write_article' %}">TUTAJ</a> aby dodać pierwszy artykuł
+                                {% endif %}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <div class="text-muted bootstrap-admin-box-title">Moje komentarze</div>
+                            </div>
+                            <div class="bootstrap-admin-panel-content">
+                                {% if comments %}
+                                    {% for comment in comments %}
+
+
+
+                                    {% endfor %}
+                                {% else %}
+                                    Nie napisałeś jeszcze żadnego komentarza, kliknij
+                                    <a href="#">TUTAJ</a> aby zobaczyć najnowsze artykuły
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+
+                    </div>
+                    <div class="col-md-6 meritoo-logo">
+
+                    </div>
+                </div>
+
+                <div class="row row-urls">
+
+                </div>
+            {% endblock %}
+            </div>
+    </div>
+</div>
+
+<!-- footer -->
+<div class="navbar navbar-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <footer role="contentinfo">
+
+                    <p class="right">&copy; 2015 <a href="" target="_blank">IT's my life</a></p>
+                </footer>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+<script type="text/javascript" src="{% static 'account/js/bootstrap.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'account/js/twitter-bootstrap-hover-dropdown.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'account/js/bootstrap-admin-theme-change-size.js' %}"></script>
 </body>
 </html>

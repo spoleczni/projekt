@@ -1,0 +1,64 @@
+﻿            {% include 'base/header.html' %}
+            {% load static %}
+            <center>
+            <div class="metro_gallery flip horizontal lightbox">
+                <div class="tile tile_1x1 blue">
+                    <img src="{% static 'home/demo_images/rooney.jpg' %}" data-caption="Rooney" />
+                    <img src="{% static 'home/demo_images/tshirt.jpg' %}" data-caption="ManUtd" />
+                </div>
+                <div class="tile tile_1x1 darkred">
+                    <img src="{% static 'home/demo_images/king.jpg' %}" data-caption="ManUtd" />
+                </div>
+                <div class="tile tile_1x2 orange">
+                    <img src="{% static 'home/demo_images/giggs.jpg' %}" data-caption="Giggs" />
+                    <img src="{% static 'home/demo_images/beckham.jpg' %}" data-caption="Beckham" />
+                </div>
+                <div class="tile tile_2x1 red">
+                    <img src="{% static 'home/demo_images/ferguson.jpg' %}" data-caption="Ferguson" />
+                    <img src="{% static 'home/demo_images/rio.jpg' %}" data-caption="ferdinand" />
+                </div>
+                <div class="tile tile_2x2 purple">
+                    <img src="{% static 'home/demo_images/king.jpg' %}" data-caption="ManUtd" />
+                    <img src="{% static 'home/demo_images/tshirt.jpg' %}" data-caption="ManUtd" />
+                </div>
+                <div class="tile tile_1x1 darkred">
+                    <img src="{% static 'home/demo_images/rooney.jpg' %}" data-caption="Rooney" />
+                </div>
+                <div class="tile tile_1x1 grey">
+                    <img src="{% static 'home/demo_images/tshirt.jpg' %}" data-caption="ManUtd" />
+                    <img src="{% static 'home/demo_images/ronaldo.jpg' %}" data-caption="Ronaldo" />
+                </div>
+                <div class="tile tile_2x1 orange">
+                    <img src="{% static 'home/demo_images/paper.jpg' %}" data-caption="ManUtd" />
+                    <img src="{% static 'home/demo_images/ferguson.jpg' %}" data-caption="Ferguson" />
+                </div>
+                <div class="tile tile_3x3 green">
+                    <img src="{% static 'home/demo_images/king.jpg' %}" data-caption="ManUtd" />
+                    <img src="{% static 'home/demo_images/rooney.jpg' %}" data-caption="Rooney" />
+                    <img src="{% static 'home/demo_images/tshirt.jpg' %}" data-caption="ManUtd" />
+                </div>
+                <div class="tile tile_2x1 purple">
+                    <img src="{% static 'home/demo_images/rio.jpg' %}" data-caption="ferdinand" />
+                    <img src="{% static 'home/demo_images/paper.jpg' %}" data-caption="ManUtd" />
+                </div>
+                <div class="tile tile_2x3 yellow">
+                    <img src="{% static 'home/demo_images/group.jpg' %}" data-caption="Group" />
+                    <img src="{% static 'home/demo_images/manutd_logo.jpg' %}" data-caption="ManUtd" />
+                </div>
+                <div class="tile tile_4x2 darkblue">
+                    <img src="{% static 'home/demo_images/ferguson.jpg' %}" data-caption="Ferguson" />
+                    <img src="{% static 'home/demo_images/paper.jpg' %}" data-caption="ManUtd" />
+                    <img src="{% static 'home/demo_images/rio.jpg' %}" data-caption="ferdinand" />
+                </div>
+                <div class="tile tile_3x1 darkgreen">
+                    <img src="{% static 'home/demo_images/champ.jpg' %}" data-caption="EPL Champion" />
+                    <img src="{% static 'home/demo_images/cloth.jpg' %}" data-caption="ManUtd" />
+                </div>
+                <div class="tile tile_3x1 darkgreen">
+                    <img src="{% static 'home/demo_images/wallpaper.jpg' %}" data-caption="ManUtd" />
+                    <img src="{% static 'home/demo_images/champ.jpg' %}" data-caption="EPL Champion" />
+                </div>
+            </div>
+         </center>
+        </br></br></br>
+		{% include 'base/footer.html' %}
