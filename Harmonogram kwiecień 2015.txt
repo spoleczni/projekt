@@ -1,18 +1,18 @@
-Projekt zespo≥owy: Spo≥eczni.pl - IT my life
-Harmonogram zadaÒ do wykonania
+Projekt zespo≈Çowy: Spo≈Çeczni.pl - IT my life
+Harmonogram zada≈Ñ do wykonania
 
-KwiecieÒ 2015 roku:
+Kwiecie≈Ñ 2015 roku:
 
 Panowie: 
-	 Poprawki dotychczas wykonanych modu≥Ûw;
-	 Stworzenie i dodanie modu≥Ûw: kategorii artyku≥Ûw, tagÛw, uprawnieÒ userÛw,
-	 Dodanie sekcji wideo;
-	 Prace nad profilem autora tekstÛw;
-	 Utworzenie i dodanie odpowiedniej grafiki do powyzszych modu≥Ûw.
-	 Jeúli bedzie mozliwoúÊ przenosiny na lepszy server.
+	 Poprawki dotychczas wykonanych modu≈Ç√≥w;
+	 Stworzenie i dodanie modu≈Ç√≥w: kategorii artyku≈Ç√≥w, oceny artyku≈Ç√≥w,
+	 Filtrowanie, wyszukiwanie w sekcji artyku≈Ç√≥w;
+	 Prace rekonfiguracyjne nad profilem usera;
+	 Utworzenie i dodanie odpowiedniej grafiki do powyzszych modu≈Ç√≥w.
+	 Je≈õli bedzie mozliwo≈õƒá przenosiny na lepszy server.
 
 Pani Krystyna: 
 	 Wykonanie widoku bloga dla strony firmowej.
-	 Pomoc przy innych pracach w danym miesiπcu.
+	 Pomoc przy innych pracach w danym miesiƒÖcu.
 
 Deadline: Maj 2015 roku.
