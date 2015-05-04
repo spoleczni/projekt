@@ -12,7 +12,7 @@ Panowie:
 	 Jeśli bedzie mozliwość przenosiny na lepszy server.
 
 Pani Krystyna: 
-	 Wykonanie widoku bloga dla strony firmowej.
+	 Wykonanie widoku bloga dla strony firmowej - dodatkowo w kolejnym miesiacu.
 	 Pomoc przy innych pracach w danym miesiącu.
 
 Deadline: Maj 2015 roku.
