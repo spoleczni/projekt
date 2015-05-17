@@ -22,7 +22,10 @@ urlpatterns = patterns('',
     #articles urls
     url(r'^articles/', include('articles.urls', namespace='articles')),
 
-    #comments
+    #articles urls
+    url(r'^videos/', include('video.urls', namespace='videos')),
+
+    url(r"^ratings/", include("pinax.ratings.urls")),
     
 
     #url(r'^account/register/', 'account.views.register', name='register'),

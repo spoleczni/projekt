@@ -18,13 +18,15 @@ class ArticleForm(forms.ModelForm):
 
     class Meta:
         model = Article
-        fields = ['title', 'category', 'body']
+        fields = ['title', 'category', 'body', 'tags']
         widgets = {
             'title': forms.TextInput(attrs={'class': 'form-control'}),
             'category': forms.Select(attrs={'class': 'form-control'}),
+            'tags': forms.TextInput(attrs={'class': 'form-control'}),
         }
 
     def __init__(self, user, *args, **kwargs):
         self.author = user
         super(ArticleForm, self).__init__(*args, **kwargs)
         self.fields['body'].label = 'Treść'
+        self.fields['tags'].label = 'Tagi'

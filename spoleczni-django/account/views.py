@@ -65,10 +65,12 @@ def edit(request):
 def write_article(request):
     form = ArticleForm(request.user, request.POST or None)
     if request.method == 'POST' and form.is_valid():
-        form = form.save(commit=False)
-        form.author = request.user
-        form.save()
-        pprint.pprint(form.author)
+        art = form.save(commit=False)
+        art.author = request.user
+        art.save()
+        form.save_m2m()
+        # pprint.pprint(form.author)
+        return redirect("edit")
     return render(request, 'account/article.html', {'form': form, })
 
 

@@ -4,10 +4,11 @@ from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
 from ckeditor.fields import RichTextField
+from taggit.managers import TaggableManager
 
 
 class Category(models.Model):
-    name = models.CharField(max_length=20)
+    name = models.CharField(max_length=500)
     # subcategory_id = models.IntegerField(null=True)
 
     def __unicode__(self):
@@ -24,6 +25,8 @@ class Article(models.Model):
     author = models.ForeignKey(User, null=True, blank=True, verbose_name="Autor")
     category = models.ForeignKey(Category, verbose_name="Kategoria")
     public = models.BooleanField(default=False, verbose_name="Publiczny?")
+
+    tags = TaggableManager(verbose_name="Tagi", help_text="Lista oddzielonych przecinkami tagów.",)
 
     pub_date = models.DateTimeField(default=datetime.datetime.now, verbose_name="Data publikacji")
 

@@ -46,7 +46,7 @@ INSTALLED_APPS = (
     'grappelli',
     'django.contrib.admin',
     'django.contrib.auth',
-    'django.contrib.sites',
+    # 'django.contrib.sites',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
@@ -55,6 +55,10 @@ INSTALLED_APPS = (
     'articles',
     'account',
     'disqus',
+    'pinax.ratings',
+    'taggit',
+    'embed_video',
+    'video',
 )
 
 MIDDLEWARE_CLASSES = (

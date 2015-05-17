@@ -1,0 +1,75 @@
+{% extends 'home/index.html' %}
+{% load embed_video_tags %}
+{#{% include "base/header.html" %}#}
+
+{% block content %}
+    <div class="row">
+        <div class="page-header">
+            <div class="row">
+                <div class="col-md-6">
+                    <h1>
+                        Filmy
+                        <small class="hidden">Ewentualne lorem ipsum</small>
+                    </h1>
+                </div>
+{#                <div class="col-md-6">#}
+{#                    <form method="get" action="">#}
+{#                        <div class="form-inline">#}
+{#                            <div class="input-group">#}
+{#                                <div class="input-group-addon"><span class="glyphicon glyphicon-search"></span></div>#}
+{#                                {{ search_form.query }}#}
+{#                            </div>#}
+{#                            <button class="btn btn-primary" name="submit">Szukaj</button>#}
+{#                        </div>#}
+{#                    </form>#}
+{#                </div>#}
+            </div>
+        </div>
+        {% if videos %}
+            {% for video in videos %}
+                {% video video.video as my_video %}
+                    <div class="media">
+                        <a class="pull-left" href="#">
+                            <img class="media-object" src="{{ my_video.thumbnail }}"
+                                 alt="Media Object" width="64">
+                        </a>
+
+                        <div class="media-body">
+                            <h4 class="media-heading custom-media-heading">
+                                <a href="{% url 'videos:detail' video.id %}">
+                                    {{ video.name }}
+                                </a>
+                            </h4>
+                        </div>
+                    </div>
+                {% endvideo %}
+            {% endfor %}
+        {% else %}
+            <div class="alert alert-info" role="alert">Nie ma jeszcze żadnych filmów :(</div>
+        {% endif %}
+    </div>
+
+{% endblock %}
+
+{% block sidebar %}
+{#    <div class="panel panel-default">#}
+{#        <div class="panel-heading">#}
+{#            Filtry#}
+{#        </div>#}
+{#        <div class="panel-body container-fluid">#}
+{#            <form method="get" action="">#}
+{#                <div class="form-group">#}
+{#                    <label for="id_category">{{ filter_form.category.label }}</label>#}
+{#                    {{ filter_form.category }}#}
+{#                </div>#}
+{#                <div class="form-group">#}
+{#                    <label for="id_date">{{ filter_form.date.label }}</label>#}
+{#                    {{ filter_form.date }}#}
+{#                </div>#}
+{#                <button class="btn btn-primary" name="submit">Filtruj</button>#}
+{#            </form>#}
+{#        </div>#}
+{#    </div>#}
+{% endblock %}
+
+{#{% include "base/footer.html" %}#}

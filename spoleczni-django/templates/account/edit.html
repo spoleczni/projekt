@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>About | Bootstrap 3.x Admin Theme</title>
+    <title>Edytuj</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -12,13 +12,14 @@
     <link href="http://getbootstrap.com/docs-assets/css/docs.css" rel="stylesheet" type="text/css" media="screen">
 
     <!-- Bootstrap -->
-    <link rel="stylesheet" media="screen" type="text/css" href="{% static 'account/css/bootstrap.min.css' %}">
-    <link rel="stylesheet" media="screen" type="text/css" href="{% static 'account/css/bootstrap-theme.min.css' %}">
-
+{#    <link rel="stylesheet" media="screen" type="text/css" href="{% static 'account/css/bootstrap.min.css' %}">#}
+{#    <link rel="stylesheet" media="screen" type="text/css" href="{% static 'account/css/bootstrap-theme.min.css' %}">#}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <!-- Bootstrap Admin Theme -->
     <link rel="stylesheet" media="screen" type="text/css" href="{% static 'account/css/bootstrap-admin-theme.css' %}">
-    <link rel="stylesheet" media="screen" type="text/css"
-          href="{% static 'account/css/bootstrap-admin-theme-change-size.css' %}">
+{#    <link rel="stylesheet" media="screen" type="text/css"#}
+{#          href="{% static 'account/css/bootstrap-admin-theme-change-size.css' %}">#}
+    <link rel="stylesheet" type="text/css" href="{% static 'home/css/dataurl.css' %}">
 
     <!-- Custom styles -->
     <style type="text/css">
@@ -188,27 +189,27 @@
                     </div>
                 </div>
 
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <div class="text-muted bootstrap-admin-box-title">Moje komentarze</div>
-                            </div>
-                            <div class="bootstrap-admin-panel-content">
-                                {% if comments %}
-                                    {% for comment in comments %}
-
-
-
-                                    {% endfor %}
-                                {% else %}
-                                    Nie napisałeś jeszcze żadnego komentarza, kliknij
-                                    <a href="#">TUTAJ</a> aby zobaczyć najnowsze artykuły
-                                {% endif %}
-                            </div>
-                        </div>
-                    </div>
-                </div>
+{#                <div class="row">#}
+{#                    <div class="col-md-12">#}
+{#                        <div class="panel panel-default">#}
+{#                            <div class="panel-heading">#}
+{#                                <div class="text-muted bootstrap-admin-box-title">Moje komentarze</div>#}
+{#                            </div>#}
+{#                            <div class="bootstrap-admin-panel-content">#}
+{#                                {% if comments %}#}
+{#                                    {% for comment in comments %}#}
+{##}
+{##}
+{##}
+{#                                    {% endfor %}#}
+{#                                {% else %}#}
+{#                                    Nie napisałeś jeszcze żadnego komentarza, kliknij#}
+{#                                    <a href="#">TUTAJ</a> aby zobaczyć najnowsze artykuły#}
+{#                                {% endif %}#}
+{#                            </div>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                </div>#}
 
                 <div class="row">
                     <div class="col-md-6">
@@ -245,5 +246,6 @@
 <script type="text/javascript" src="{% static 'account/js/bootstrap.min.js' %}"></script>
 <script type="text/javascript" src="{% static 'account/js/twitter-bootstrap-hover-dropdown.min.js' %}"></script>
 <script type="text/javascript" src="{% static 'account/js/bootstrap-admin-theme-change-size.js' %}"></script>
+<script src="{% static "home/js/pace.min.js" %}"></script>
 </body>
 </html>

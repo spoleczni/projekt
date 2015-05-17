@@ -1,6 +1,6 @@
 {% extends 'home/index.html' %}
 {% include "base/header.html" %}
-{% load disqus_tags %}
+{% load staticfiles disqus_tags pinax_ratings_tags %}
 
 {% block content %}
     <div class="page-header">
@@ -15,10 +15,38 @@
             {%  endautoescape %}
         </div>
         <div class="panel-footer">
-            <p>{{ article.author }} | {{ article.pub_date }}</p>
+            <div class="row">
+                <div class="col-sm-6">
+                    {% overall_rating article as the_overall_rating %}
+                    <div>
+                        {{ article.author }} | {{ article.pub_date }} | Ocena: <div class="overall_rating" style="display: inline-block;">{{ the_overall_rating }}</div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+
+                    <div id="user_rating" style="float: right"></div>
+                </div>
+            </div>
+
         </div>
     </div>
-    
+    <div class="article-tags">
+        {% if article.tags %}
+            <form class="form-inline" method="get">
+                Tagi:
+                {% for tag in article.tags.all %}
+                    <button name="{{ tag.name }}" class="btn btn-sm btn-primary">{{ tag.name }}</button>
+                {% endfor %}
+            </form>
+        {% endif %}
+    </div>
+
+    <script src="{% static "home/js/jquery-1.11.2.js" %}"></script>
+    {% if request.user.is_authenticated %}
+        {% user_rating_js request.user article %}
+    {% endif %}
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
     <div id="disqus_thread"></div>
     <script type="text/javascript">
         var disqus_shortname = 'its-mylife'; 
@@ -34,7 +62,7 @@
     <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
     {{ disqus_sso|safe }}
-    
+
 {% endblock %}
 
 {% include "base/footer.html" %}

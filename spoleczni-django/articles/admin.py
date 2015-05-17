@@ -7,7 +7,7 @@ import articles.models as articles
 class ArticleAdmin(admin.ModelAdmin):
     fieldsets = [
         (None, {'fields': ['title']}),
-        ('Article', {'fields': ['pub_date', 'category', 'body', 'public']}),
+        ('Article', {'fields': ['pub_date', 'category', 'body', 'public', 'tags']}),
     ]
 
     list_display = ('title', 'author', 'category', 'pub_date', 'was_published_recently', 'public')

@@ -1,0 +1,7 @@
+django==1.7.1
+django-grappelli
+django-disqus
+django-ckeditor
+pinax-ratings
+django-taggit
+django-embed-video

@@ -1,5 +1,6 @@
 from django import forms
 from articles.models import Category
+from articles.models import Article
 
 
 # FILTROWANIE
@@ -28,3 +29,10 @@ class ArticleSearchForm(forms.Form):
             required=False,
             label="Szukaj"
         )
+
+
+# Tagi
+class ArticleTagsForm(forms.ModelForm):
+    class Meta:
+        model = Article
+        fields = ['tags', ]

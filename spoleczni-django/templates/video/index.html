@@ -1,0 +1,68 @@
+{% extends 'home/index.html' %}
+{% include "base/header.html" %}
+{% load staticfiles disqus_tags pinax_ratings_tags embed_video_tags %}
+
+{% block content %}
+    <div class="page-header">
+        <h1>{{ video.name }}
+            <small class="hidden">Ewentualne lorem ipsum</small>
+        </h1>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-body">
+            {% video video.video as my_video %}
+                {% video my_video 'medium' %}
+            {% endvideo %}
+        </div>
+        <div class="panel-footer">
+            <div class="row">
+                <div class="col-sm-6">
+                    {% overall_rating video as the_overall_rating %}
+                    <div>
+                        {{ video.author }} | {{ video.publish_date }} | Ocena: <div class="overall_rating" style="display: inline-block;">{{ the_overall_rating }}</div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+
+                    <div id="user_rating" style="float: right"></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="article-tags">
+        {% if video.tags %}
+            <form class="form-inline" method="get">
+                Tagi:
+                {% for tag in video.tags.all %}
+                    <button name="{{ tag.name }}" class="btn btn-sm btn-primary">{{ tag.name }}</button>
+                {% endfor %}
+            </form>
+        {% endif %}
+    </div>
+
+    <script src="{% static "home/js/jquery-1.11.2.js" %}"></script>
+    {% if request.user.is_authenticated %}
+        {% user_rating_js request.user video %}
+    {% endif %}
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'its-mylife';
+        var disqus_identifier = '';
+        var disqus_title = '';
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    {{ disqus_sso|safe }}
+
+{% endblock %}
+
+{% include "base/footer.html" %}
