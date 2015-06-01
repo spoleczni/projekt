@@ -6,9 +6,7 @@ Maj 2015 roku:
 	 Ewentualne poprawki b³êdów dotychczas wykonanych modu³ach;
 	 Stworzenie i dodanie modu³u: sekcji wideo;
 	 Stworzenie i dodanie modu³u: tagów dla artyku³u/wpisu na stronie;
-	 Stworzenie i dodanie funkcjonalnoœci: uprawnieñ u¿ytkowników/userów;
 	 Ewentualne prace rekonfiguracyjne nad profilem usera zwi¹zane z zadaniem powy¿ej;
-	 Utworzenie i dodanie odpowiedniej grafiki do powyzszych modu³ów.
 	 Przenosiny na servery Microsoft Azure (jeœli tylko Microsoft w koñcu aktywuje konto);
 
 Christy dodatkowo: 
