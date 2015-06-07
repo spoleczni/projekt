@@ -1,6 +1,8 @@
 from django import forms
 from articles.models import Category
 from articles.models import Article
+from django.contrib.auth.models import User
+
 
 
 # FILTROWANIE
@@ -18,6 +20,13 @@ class ArticleFilterForm(forms.Form):
             required=False,
             label="Data"
         )
+        self.fields['author']=forms.ModelChoiceField(
+            widget=forms.Select(attrs={'class': 'form-control'}),
+            queryset = User.objects.all()  ,
+            required=False,
+            label="Autor"
+        )
+
 
 
 # WYSZUKIWANIE
