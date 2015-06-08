@@ -1,11 +1,10 @@
-from django.shortcuts import get_object_or_404, redirect
+from django.contrib.auth.decorators import login_required
+from django.shortcuts import render, get_object_or_404, redirect
 from articles.models import Article, Category
 from articles.forms import ArticleFilterForm, ArticleSearchForm
 from django.views import generic
 from articles.disqus import get_disqus_sso
 from taggit.models import Tag
-from django.contrib.auth.models import User
-from django.views.generic import DetailView
 
 
 def _get_disqus_sso(user):
@@ -35,12 +34,6 @@ class ArticleListView(generic.TemplateView):
         category_filter = request.GET.get('category')
         if category_filter:
             self.articles = self.articles.filter(category=category_filter)
-
-        # Filtrowanie po autoram
-        author_filter = request.GET.get('author')
-        if author_filter:
-            self.articles = self.articles.filter(author=author_filter)
-
 
         # Filtrowanie po dacie
         date_filter = request.GET.get('date')
@@ -81,6 +74,3 @@ class ArticleView(generic.DetailView):
         context = super(ArticleView, self).get_context_data(**kwargs)
         context['disqus_sso'] = _get_disqus_sso(self.request.user)
         return context
-    
-
-
